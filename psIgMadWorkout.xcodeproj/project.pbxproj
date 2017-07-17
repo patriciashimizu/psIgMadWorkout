@@ -19,6 +19,10 @@
 		9BC768211F1D1317005E8393 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC768201F1D1317005E8393 /* InterfaceController.swift */; };
 		9BC768231F1D1317005E8393 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC768221F1D1317005E8393 /* ExtensionDelegate.swift */; };
 		9BC768251F1D1317005E8393 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BC768241F1D1317005E8393 /* Assets.xcassets */; };
+		9BC768361F1D1454005E8393 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BC768351F1D1454005E8393 /* logo.png */; };
+		9BC7683D1F1D1477005E8393 /* CaviarDreams_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BC7683A1F1D1477005E8393 /* CaviarDreams_Bold.ttf */; };
+		9BC7683E1F1D1477005E8393 /* GeosansLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BC7683B1F1D1477005E8393 /* GeosansLight.ttf */; };
+		9BC7683F1F1D1477005E8393 /* gishabd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BC7683C1F1D1477005E8393 /* gishabd.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +84,10 @@
 		9BC768221F1D1317005E8393 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		9BC768241F1D1317005E8393 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BC768261F1D1317005E8393 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BC768351F1D1454005E8393 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = images/logo.png; sourceTree = "<group>"; };
+		9BC7683A1F1D1477005E8393 /* CaviarDreams_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = CaviarDreams_Bold.ttf; path = fonts/CaviarDreams_Bold.ttf; sourceTree = "<group>"; };
+		9BC7683B1F1D1477005E8393 /* GeosansLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GeosansLight.ttf; path = fonts/GeosansLight.ttf; sourceTree = "<group>"; };
+		9BC7683C1F1D1477005E8393 /* gishabd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = gishabd.ttf; path = fonts/gishabd.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,8 @@
 		9BC767FC1F1D1317005E8393 /* psIgMadWorkout */ = {
 			isa = PBXGroup;
 			children = (
+				9BC768391F1D146C005E8393 /* fonts */,
+				9BC768341F1D1448005E8393 /* images */,
 				9BC767FD1F1D1317005E8393 /* AppDelegate.swift */,
 				9BC767FF1F1D1317005E8393 /* ViewController.swift */,
 				9BC768011F1D1317005E8393 /* Main.storyboard */,
@@ -152,6 +162,24 @@
 				9BC768261F1D1317005E8393 /* Info.plist */,
 			);
 			path = "psIgMadWorkout WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		9BC768341F1D1448005E8393 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9BC768351F1D1454005E8393 /* logo.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		9BC768391F1D146C005E8393 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9BC7683A1F1D1477005E8393 /* CaviarDreams_Bold.ttf */,
+				9BC7683B1F1D1477005E8393 /* GeosansLight.ttf */,
+				9BC7683C1F1D1477005E8393 /* gishabd.ttf */,
+			);
+			name = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,9 +287,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BC7683E1F1D1477005E8393 /* GeosansLight.ttf in Resources */,
+				9BC768361F1D1454005E8393 /* logo.png in Resources */,
 				9BC768081F1D1317005E8393 /* LaunchScreen.storyboard in Resources */,
+				9BC7683D1F1D1477005E8393 /* CaviarDreams_Bold.ttf in Resources */,
 				9BC768051F1D1317005E8393 /* Assets.xcassets in Resources */,
 				9BC768031F1D1317005E8393 /* Main.storyboard in Resources */,
+				9BC7683F1F1D1477005E8393 /* gishabd.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
