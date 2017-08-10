@@ -1,31 +1,32 @@
-//
-//  InterfaceController.swift
-//  psIgMadWorkout WatchKit Extension
-//
-//  Created by eleves on 2017-07-17.
-//  Copyright © 2017 eleves. All rights reserved.
-//
-
+//======================================================
 import WatchKit
 import Foundation
+import WatchConnectivity
+//======================================================
 
-
-class InterfaceController: WKInterfaceController {
-
+class InterfaceController: WKInterfaceController, WCSessionDelegate {
+    
+    // ------------------------------------
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        // Configure interface objects here.
     }
-    
+    // ------------------------------------
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
-    
+    // ------------------------------------
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    // ------------------------------------
+    @available(watchOS 2.2, *)
+    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        //..code
+    }
+    // ------------------------------------
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        
+    }
+    // ------------------------------------
 
 }

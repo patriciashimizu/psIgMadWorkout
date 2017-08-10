@@ -38,7 +38,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     // ------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        if WCSession.isSupported()
+        /*if WCSession.isSupported()
         {
             session = WCSession.default()
             session!.delegate = self
@@ -48,7 +48,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             {
                 self.theSynchButton.alpha = 0.0
             }
-        }
+        }*/
         
         self.theExercise = ""
         Shared.sharedInstance.saveOrLoadUserDefaults("db")
@@ -217,18 +217,6 @@ class ViewController: UIViewController, WCSessionDelegate {
         
         self.theRepsField.text = ""
         self.theSetsField.text = ""
-        
-        /*self.thePickerView.selectRow(0, inComponent: 0, animated: true)
-         
-         theDatePicker.datePickerMode = UIDatePickerMode.date
-         let currentDate = NSDate()
-         theDatePicker.minimumDate = currentDate as Date
-         theDatePicker.date = currentDate as Date
-         
-         //https://makeapppie.com/2014/09/22/swift-swift-using-dates-and-the-uidatepicker-in-swift/
-         
-         self.theRepsField.text = ""
-         self.theSetsField.text = ""*/
     }
     // ------------------------------------
     //SYNCH

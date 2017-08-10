@@ -560,10 +560,17 @@
                                 <state key="normal" title="ADD">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="addExerciseButton:" destination="My1-CO-wfl" eventType="touchUpInside" id="cqG-ty-BGS"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fnk-F1-rIv">
                                 <rect key="frame" x="16" y="187" width="343" height="374"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="My1-CO-wfl" id="dZP-XW-hY7"/>
+                                    <outlet property="delegate" destination="My1-CO-wfl" id="5Pf-A4-Hbp"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -590,6 +597,10 @@
                             <constraint firstItem="LIy-fR-OS6" firstAttribute="centerX" secondItem="Vua-Ux-Fcs" secondAttribute="centerX" id="zMd-9Y-7xw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addExerciseField" destination="LIy-fR-OS6" id="nIo-y8-pVi"/>
+                        <outlet property="theTableView" destination="Fnk-F1-rIv" id="ZQv-Z5-F3W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZ1-ta-Tl6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -600,7 +611,7 @@
         <image name="logo.png" width="240" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mbG-kK-jqz"/>
-        <segue reference="GqE-UC-c6f"/>
+        <segue reference="aSa-9h-yfw"/>
+        <segue reference="WG9-OT-pUx"/>
     </inferredMetricsTieBreakers>
 </document>
