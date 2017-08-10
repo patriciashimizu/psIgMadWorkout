@@ -306,6 +306,10 @@
                                 <rect key="frame" x="16" y="91" width="343" height="480"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ldN-eR-m6X" id="Wyr-Nb-20t"/>
+                                    <outlet property="delegate" destination="ldN-eR-m6X" id="Ho9-Uw-4sg"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="72F-N7-nPu">
                                 <rect key="frame" x="-4" y="587" width="94" height="80"/>
@@ -437,6 +441,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h3s-8R-V0s">
                                 <rect key="frame" x="16" y="155" width="343" height="409"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oQ4-g0-2iN" id="Lcm-he-PN5"/>
+                                    <outlet property="delegate" destination="oQ4-g0-2iN" id="GbY-KU-mFC"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ze3-ft-fhh">
                                 <rect key="frame" x="141" y="587" width="94" height="80"/>
@@ -445,6 +453,9 @@
                                 <state key="normal" title="EDIT">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="reorder:" destination="oQ4-g0-2iN" eventType="touchUpInside" id="Lhw-1H-ZXP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -470,6 +481,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="xWi-Lm-mL0" secondAttribute="trailing" constant="-20" id="pYa-Fp-E5r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infoDateLabel" destination="S4p-q7-wuC" id="LKr-YY-7EL"/>
+                        <outlet property="reorderButton" destination="Ze3-ft-fhh" id="gbt-12-R22"/>
+                        <outlet property="theTableView" destination="h3s-8R-V0s" id="a18-8T-H5X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpu-Oa-zY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -584,7 +600,7 @@
         <image name="logo.png" width="240" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WG9-OT-pUx"/>
-        <segue reference="aSa-9h-yfw"/>
+        <segue reference="mbG-kK-jqz"/>
+        <segue reference="GqE-UC-c6f"/>
     </inferredMetricsTieBreakers>
 </document>

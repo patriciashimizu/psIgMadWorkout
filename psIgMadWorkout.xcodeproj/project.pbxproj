@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9B594B591F3C9B4500F73E55 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B594B581F3C9B4500F73E55 /* Shared.swift */; };
+		9B594B5B1F3CBE3A00F73E55 /* WorkoutsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B594B5A1F3CBE3A00F73E55 /* WorkoutsView.swift */; };
+		9B594B5D1F3CC7E000F73E55 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B594B5C1F3CC7E000F73E55 /* InfoView.swift */; };
 		9BC767FE1F1D1317005E8393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC767FD1F1D1317005E8393 /* AppDelegate.swift */; };
 		9BC768001F1D1317005E8393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC767FF1F1D1317005E8393 /* ViewController.swift */; };
 		9BC768031F1D1317005E8393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC768011F1D1317005E8393 /* Main.storyboard */; };
@@ -70,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		9B594B581F3C9B4500F73E55 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		9B594B5A1F3CBE3A00F73E55 /* WorkoutsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutsView.swift; path = ../WorkoutsView.swift; sourceTree = "<group>"; };
+		9B594B5C1F3CC7E000F73E55 /* InfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		9BC767FA1F1D1317005E8393 /* psIgMadWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = psIgMadWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC767FD1F1D1317005E8393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC767FF1F1D1317005E8393 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				9BC768061F1D1317005E8393 /* LaunchScreen.storyboard */,
 				9BC768091F1D1317005E8393 /* Info.plist */,
 				9B594B581F3C9B4500F73E55 /* Shared.swift */,
+				9B594B5A1F3CBE3A00F73E55 /* WorkoutsView.swift */,
+				9B594B5C1F3CC7E000F73E55 /* InfoView.swift */,
 			);
 			name = pslgMadWorkout;
 			path = psIgMadWorkout;
@@ -327,6 +333,8 @@
 			files = (
 				9B594B591F3C9B4500F73E55 /* Shared.swift in Sources */,
 				9BC768001F1D1317005E8393 /* ViewController.swift in Sources */,
+				9B594B5B1F3CBE3A00F73E55 /* WorkoutsView.swift in Sources */,
+				9B594B5D1F3CC7E000F73E55 /* InfoView.swift in Sources */,
 				9BC767FE1F1D1317005E8393 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
