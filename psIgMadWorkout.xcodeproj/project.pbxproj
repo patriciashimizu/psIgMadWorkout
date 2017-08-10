@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B594B591F3C9B4500F73E55 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B594B581F3C9B4500F73E55 /* Shared.swift */; };
 		9BC767FE1F1D1317005E8393 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC767FD1F1D1317005E8393 /* AppDelegate.swift */; };
 		9BC768001F1D1317005E8393 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BC767FF1F1D1317005E8393 /* ViewController.swift */; };
 		9BC768031F1D1317005E8393 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BC768011F1D1317005E8393 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9B594B581F3C9B4500F73E55 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		9BC767FA1F1D1317005E8393 /* psIgMadWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = psIgMadWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BC767FD1F1D1317005E8393 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BC767FF1F1D1317005E8393 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +113,7 @@
 		9BC767F11F1D1316005E8393 = {
 			isa = PBXGroup;
 			children = (
-				9BC767FC1F1D1317005E8393 /* psIgMadWorkout */,
+				9BC767FC1F1D1317005E8393 /* pslgMadWorkout */,
 				9BC768101F1D1317005E8393 /* psIgMadWorkout WatchKit App */,
 				9BC7681F1F1D1317005E8393 /* psIgMadWorkout WatchKit Extension */,
 				9BC767FB1F1D1317005E8393 /* Products */,
@@ -128,7 +130,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9BC767FC1F1D1317005E8393 /* psIgMadWorkout */ = {
+		9BC767FC1F1D1317005E8393 /* pslgMadWorkout */ = {
 			isa = PBXGroup;
 			children = (
 				9BC768391F1D146C005E8393 /* fonts */,
@@ -139,7 +141,9 @@
 				9BC768041F1D1317005E8393 /* Assets.xcassets */,
 				9BC768061F1D1317005E8393 /* LaunchScreen.storyboard */,
 				9BC768091F1D1317005E8393 /* Info.plist */,
+				9B594B581F3C9B4500F73E55 /* Shared.swift */,
 			);
+			name = pslgMadWorkout;
 			path = psIgMadWorkout;
 			sourceTree = "<group>";
 		};
@@ -321,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B594B591F3C9B4500F73E55 /* Shared.swift in Sources */,
 				9BC768001F1D1317005E8393 /* ViewController.swift in Sources */,
 				9BC767FE1F1D1317005E8393 /* AppDelegate.swift in Sources */,
 			);
@@ -580,6 +585,7 @@
 				9BC7682B1F1D1317005E8393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BC7682D1F1D1317005E8393 /* Build configuration list for PBXNativeTarget "psIgMadWorkout WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -588,6 +594,7 @@
 				9BC7682F1F1D1317005E8393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9BC768311F1D1317005E8393 /* Build configuration list for PBXNativeTarget "psIgMadWorkout" */ = {
 			isa = XCConfigurationList;
@@ -596,6 +603,7 @@
 				9BC768331F1D1317005E8393 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
