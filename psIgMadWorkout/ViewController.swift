@@ -38,7 +38,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     // ------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*if WCSession.isSupported()
+        if WCSession.isSupported()
         {
             session = WCSession.default()
             session!.delegate = self
@@ -48,7 +48,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             {
                 self.theSynchButton.alpha = 0.0
             }
-        }*/
+        }
         
         self.theExercise = ""
         Shared.sharedInstance.saveOrLoadUserDefaults("db")
@@ -221,7 +221,31 @@ class ViewController: UIViewController, WCSessionDelegate {
     // ------------------------------------
     //SYNCH
     @IBAction func sendToWatch(_ sender: UIButton) {
+        var dictToSendWatch: [String : String] = [:]
         
+        for aWorkout in Shared.sharedInstance.theDatabase {
+            let aDate = aWorkout.0
+            let exercises = aWorkout.1
+            var str = ""
+            for i in 0..<exercises.count {
+                let exerc = Array(exercises[i].keys)[0]
+                str += "\(exerc) : \(exercises[i][exerc]!)\n"
+            }
+            
+            dictToSendWatch[aDate] = str
+        }
+        sendMessage(aDict: dictToSendWatch)
+    }
+    // ------------------------------------
+    func sendMessage(aDict: [String : String]) {
+        let messageToSend = ["Message" : aDict]
+        
+        session.sendMessage(messageToSend, replyHandler: {(replyMessage) in
+            DispatchQueue.main.async(execute: { () -> Void in})
+        
+        }) { (error) in
+            print("error: \(error.localizedDescription)")
+        }
     }
     // ------------------------------------
     fileprivate func saveUserDefaultIfNeeded()
@@ -236,6 +260,12 @@ class ViewController: UIViewController, WCSessionDelegate {
         {
             self.exerciseAccountability = self.exerciseAccount.value(forKey: "exercises") as! [String : Int]
         }
+    }
+    // ------------------------------------
+    // LOGO (saveToClipboard)
+    @IBAction func saveToClipboard(_ sender: UIButton) {
+        let unSortedExerciseKeys = Array(self.exerciseAccountability.keys)
+        UIPasteboard.general.string = unSortedExerciseKeys.joined(separator: ",")
     }
     // ------------------------------------
     func checkForUserDefaultByName(_ theName: String, andUserDefaultObject: UserDefaults) -> Bool

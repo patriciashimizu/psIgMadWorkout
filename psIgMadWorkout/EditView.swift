@@ -14,12 +14,20 @@ class EditView: UIViewController
     {
         super.viewDidLoad()
         self.exerciseAccountability = self.exerciseAccount.value(forKey: "exercises") as! [String : Int]
+        addExerciseField.becomeFirstResponder()
     }
     // ============================
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
     }
+    // ============================
+    /*override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // Show keyboard by default
+        addExerciseField.becomeFirstResponder()
+    }*/
     // ============================
     @IBAction func addExerciseButton(_ sender: UIButton)
     {

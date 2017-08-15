@@ -237,9 +237,12 @@
                                             <constraint firstAttribute="width" constant="122" id="GYZ-yX-oIl"/>
                                             <constraint firstAttribute="height" constant="45" id="fG8-uX-xdK"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="saveToClipboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oe5-xX-4G8"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.2474435364" green="0.36043326570000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.24705882352941178" green="0.36078431372549019" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="YhB-se-DUt" firstAttribute="centerX" secondItem="djZ-ZN-ZsH" secondAttribute="centerX" constant="1" id="0jK-iP-n9L"/>
                                     <constraint firstAttribute="height" constant="76" id="Izu-f9-Ydc"/>
@@ -611,7 +614,7 @@
         <image name="logo.png" width="240" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aSa-9h-yfw"/>
-        <segue reference="WG9-OT-pUx"/>
+        <segue reference="GqE-UC-c6f"/>
+        <segue reference="zgh-1j-gTh"/>
     </inferredMetricsTieBreakers>
 </document>

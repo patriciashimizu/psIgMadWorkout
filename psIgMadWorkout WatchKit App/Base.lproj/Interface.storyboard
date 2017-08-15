@@ -13,9 +13,53 @@
         <scene sceneID="aou-V4-d1y">
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="psIgMadWorkout_WatchKit_App" customModuleProvider="target">
-                    <color key="backgroundColor" red="0.60671043395996094" green="0.14839872717857361" blue="0.089280314743518829" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <items>
+                        <group width="1" height="5" alignment="left" id="zMY-iB-BDi"/>
+                        <imageView alignment="left" image="logo" id="oBI-Rv-L0e"/>
+                        <group width="1" height="6" alignment="left" id="wvD-gM-bDH"/>
+                        <table alignment="left" id="Btu-U9-uk5">
+                            <items>
+                                <tableRow identifier="row" id="cgh-dS-I4Q" customClass="TableRowController" customModule="psIgMadWorkout_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="FJl-nC-xPc">
+                                        <items>
+                                            <label alignment="left" text="Dates" id="Q4L-lx-aIp">
+                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="dates" destination="Q4L-lx-aIp" id="zjb-cg-YAb"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <color key="backgroundColor" red="0.24705882352941178" green="0.36078431372549019" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="table" destination="Btu-U9-uk5" id="uDU-Ab-kd5"/>
+                    </connections>
                 </controller>
             </objects>
+        </scene>
+        <!--page2-->
+        <scene sceneID="1Fi-sE-PVp">
+            <objects>
+                <controller identifier="page2" id="2sF-gq-3z5" customClass="WorkoutController" customModule="psIgMadWorkout_WatchKit_Extension">
+                    <items>
+                        <group width="1" height="4" alignment="left" id="M9r-C6-bM2"/>
+                        <imageView alignment="left" image="logo" id="GuD-6R-lay"/>
+                        <group width="1" height="8" alignment="left" id="iLl-r5-v5U"/>
+                        <label width="128" alignment="left" text="Label" numberOfLines="100" id="4gc-G1-XXQ">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
+                    </items>
+                    <color key="backgroundColor" red="0.2470588235" green="0.36078431370000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <connections>
+                        <outlet property="displayLabel" destination="4gc-G1-XXQ" id="Emh-HG-ewu"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="342" y="39"/>
         </scene>
     </scenes>
 </document>
