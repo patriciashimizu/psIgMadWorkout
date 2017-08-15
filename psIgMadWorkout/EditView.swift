@@ -2,7 +2,7 @@
 import UIKit
 import Foundation
 // ============================
-class EditView: UIViewController
+class EditView: UIViewController, UITextFieldDelegate
 {
     // ============================
     @IBOutlet weak var theTableView: UITableView!
@@ -14,7 +14,7 @@ class EditView: UIViewController
     {
         super.viewDidLoad()
         self.exerciseAccountability = self.exerciseAccount.value(forKey: "exercises") as! [String : Int]
-        addExerciseField.becomeFirstResponder()
+        self.addExerciseField.delegate = self
     }
     // ============================
     override func didReceiveMemoryWarning()
@@ -22,12 +22,18 @@ class EditView: UIViewController
         super.didReceiveMemoryWarning()
     }
     // ============================
-    /*override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         // Show keyboard by default
-        addExerciseField.becomeFirstResponder()
-    }*/
+        self.addExerciseField.becomeFirstResponder()
+    }
+    // ============================
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
     // ============================
     @IBAction func addExerciseButton(_ sender: UIButton)
     {
@@ -72,12 +78,6 @@ class EditView: UIViewController
             self.exerciseAccount.setValue(self.exerciseAccountability, forKey: "exercises")
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic)
         }
-    }
-    //-------------
-    func textFieldShouldReturn(_ textField: UITextField!) -> Bool
-    {
-        textField.resignFirstResponder()
-        return true
     }
     //-------------
     func mAlterts(_ theMessage: String)
