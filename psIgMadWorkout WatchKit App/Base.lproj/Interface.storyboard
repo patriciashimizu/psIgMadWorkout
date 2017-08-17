@@ -49,7 +49,7 @@
                         <group width="1" height="4" alignment="left" id="M9r-C6-bM2"/>
                         <imageView alignment="left" image="logo" id="GuD-6R-lay"/>
                         <group width="1" height="8" alignment="left" id="iLl-r5-v5U"/>
-                        <label width="128" alignment="left" verticalAlignment="center" text="Label" numberOfLines="100" id="4gc-G1-XXQ">
+                        <label width="125" alignment="center" verticalAlignment="center" text="Label" numberOfLines="100" id="4gc-G1-XXQ">
                             <fontDescription key="font" type="system" pointSize="9"/>
                         </label>
                     </items>
