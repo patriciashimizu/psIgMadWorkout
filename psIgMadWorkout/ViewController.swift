@@ -223,6 +223,9 @@ class ViewController: UIViewController, WCSessionDelegate {
     // ------------------------------------
     //SYNCH
     @IBAction func sendToWatch(_ sender: UIButton) {
+        
+        Shared.sharedInstance.saveOrLoadUserDefaults("db")
+        self.saveUserDefaultIfNeeded()
        
         var dictToSendWatch: [String : String] = [:]
         
