@@ -20,10 +20,10 @@
                         <table alignment="left" id="Btu-U9-uk5">
                             <items>
                                 <tableRow identifier="row" id="cgh-dS-I4Q" customClass="TableRowController" customModule="psIgMadWorkout_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="FJl-nC-xPc">
+                                    <group key="rootItem" width="1" height="26" alignment="left" id="FJl-nC-xPc">
                                         <items>
-                                            <label alignment="left" text="Dates" id="Q4L-lx-aIp">
-                                                <fontDescription key="font" type="system" pointSize="11"/>
+                                            <label alignment="left" verticalAlignment="center" text="Dates" id="Q4L-lx-aIp">
+                                                <fontDescription key="font" type="system" pointSize="9"/>
                                             </label>
                                         </items>
                                     </group>
@@ -49,8 +49,8 @@
                         <group width="1" height="4" alignment="left" id="M9r-C6-bM2"/>
                         <imageView alignment="left" image="logo" id="GuD-6R-lay"/>
                         <group width="1" height="8" alignment="left" id="iLl-r5-v5U"/>
-                        <label width="128" alignment="left" text="Label" numberOfLines="100" id="4gc-G1-XXQ">
-                            <fontDescription key="font" type="system" pointSize="12"/>
+                        <label width="128" alignment="left" verticalAlignment="center" text="Label" numberOfLines="100" id="4gc-G1-XXQ">
+                            <fontDescription key="font" type="system" pointSize="9"/>
                         </label>
                     </items>
                     <color key="backgroundColor" red="0.2470588235" green="0.36078431370000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

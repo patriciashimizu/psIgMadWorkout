@@ -44,10 +44,10 @@ class ViewController: UIViewController, WCSessionDelegate {
             session!.delegate = self
             session!.activate()
      
-            if !session.isPaired
+            /*if !session.isPaired
             {
                 self.theSynchButton.alpha = 0.0
-            }
+            }*/
         }
         
         self.theExercise = ""
@@ -221,6 +221,24 @@ class ViewController: UIViewController, WCSessionDelegate {
     // ------------------------------------
     //SYNCH
     @IBAction func sendToWatch(_ sender: UIButton) {
+        
+        /*if WCSession.isSupported()
+        {
+            session = WCSession.default()
+            session!.delegate = self
+            session!.activate()
+            
+            /*if !session.isPaired
+             {
+             self.theSynchButton.alpha = 0.0
+             }*/
+        }
+        
+        self.theExercise = ""
+        Shared.sharedInstance.saveOrLoadUserDefaults("db")
+        self.thePickerView.selectRow(0, inComponent: 0, animated: false)
+        self.saveUserDefaultIfNeeded()*/
+        
         var dictToSendWatch: [String : String] = [:]
         
         for aWorkout in Shared.sharedInstance.theDatabase {
@@ -266,6 +284,10 @@ class ViewController: UIViewController, WCSessionDelegate {
     @IBAction func saveToClipboard(_ sender: UIButton) {
         let unSortedExerciseKeys = Array(self.exerciseAccountability.keys)
         UIPasteboard.general.string = unSortedExerciseKeys.joined(separator: ",")
+        let alert = UIAlertController(title: "Alert", message: "Data saved to Clipboard...", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        //self.mAlerts("Data saved to Clipboard")
     }
     // ------------------------------------
     func checkForUserDefaultByName(_ theName: String, andUserDefaultObject: UserDefaults) -> Bool
