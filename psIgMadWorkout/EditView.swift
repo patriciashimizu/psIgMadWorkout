@@ -78,7 +78,7 @@ class EditView: UIViewController, UITextFieldDelegate {
         }
     }
     //-------------
-    // MARK: ------ OTHER FUNCTIONS
+    // MARK: ------ OTHER FUNCTIONS 
     // ***** Fonction: mAlerts
     /*
      *  Montre un message que l’exercice a été ajouté
