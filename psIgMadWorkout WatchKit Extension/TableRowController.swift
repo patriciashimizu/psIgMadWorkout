@@ -1,14 +1,10 @@
-//
-//  TableRowController.swift
-//  psIgMadWorkout
-//
-//  Created by eleves on 2017-08-15.
-//  Copyright © 2017 eleves. All rights reserved.
-//
-
+//======================================================
 import WatchKit
-
+//======================================================
 class TableRowController: NSObject {
+    // ------------------------------------
+    // MARK: ------ OUTLETS
     @IBOutlet var dates: WKInterfaceLabel!
-    
+    // ------------------------------------
 }
+//======================================================

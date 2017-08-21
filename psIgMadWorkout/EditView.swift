@@ -2,23 +2,24 @@
 import UIKit
 import Foundation
 // ============================
-class EditView: UIViewController, UITextFieldDelegate
-{
+class EditView: UIViewController, UITextFieldDelegate {
     // ============================
+    // MARK: ------ OUTLETS
     @IBOutlet weak var theTableView: UITableView!
     @IBOutlet weak var addExerciseField: UITextField!
+    // ============================
+    // MARK: ------ PROPERTIES
     var exerciseAccount: UserDefaults = UserDefaults.standard
     var exerciseAccountability: [String : Int]!
     // ============================
-    override func viewDidLoad()
-    {
+    // MARK: ------ SYSTEM FUNCTIONS
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.exerciseAccountability = self.exerciseAccount.value(forKey: "exercises") as! [String : Int]
         self.addExerciseField.delegate = self
     }
     // ============================
-    override func didReceiveMemoryWarning()
-    {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     // ============================
@@ -29,14 +30,13 @@ class EditView: UIViewController, UITextFieldDelegate
         self.addExerciseField.becomeFirstResponder()
     }
     // ============================
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool
-    {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     // ============================
-    @IBAction func addExerciseButton(_ sender: UIButton)
-    {
+    // MARK: ------ BUTTONS
+    @IBAction func addExerciseButton(_ sender: UIButton) {
         if self.addExerciseField.text != ""
         {
             self.exerciseAccountability[self.addExerciseField.text!] = 0
@@ -47,14 +47,13 @@ class EditView: UIViewController, UITextFieldDelegate
         }
     }
     // ============================
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    // MARK: ------ tableView FUNCTIONS
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.theTableView.backgroundColor = UIColor.clear
         return self.exerciseAccountability.count
     }
     //-------------
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell
-    {
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         let intIndex = indexPath.row
         let index = self.exerciseAccountability.index(self.exerciseAccountability.startIndex, offsetBy: intIndex)
         
@@ -68,8 +67,7 @@ class EditView: UIViewController, UITextFieldDelegate
         return cell
     }
     //-------------
-    func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: IndexPath)
-    {
+    func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: IndexPath) {
         if editingStyle == UITableViewCellEditingStyle.delete
         {
             let intIndex = indexPath.row
@@ -80,8 +78,14 @@ class EditView: UIViewController, UITextFieldDelegate
         }
     }
     //-------------
-    func mAlterts(_ theMessage: String)
-    {
+    // MARK: ------ OTHER FUNCTIONS
+    // ***** Fonction: mAlerts
+    /*
+     *  Montre un message que l’exercice a été ajouté
+     *
+     *  @param theMessage: le message à être montré
+     */
+    func mAlterts(_ theMessage: String) {
         let alertController = UIAlertController(title: "Message...", message:
             theMessage, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))

@@ -23,18 +23,18 @@ class ViewController: UIViewController, WCSessionDelegate {
     
     var theDatabase: [String : [[String : String]]]!
     var theExercise: String!
-    //--------------------------------------------------
+    // ------------------------------------
     // MARK: ------ WCSessionDelegate FUNCTIONS
     @available(iOS 9.3, *)
     public func sessionDidDeactivate(_ session: WCSession) {
         //..
     }
-    //--------------------------------------------------
+    // ------------------------------------
     @available(iOS 9.3, *)
     public func sessionDidBecomeInactive(_ session: WCSession) {
         //..
     }
-    //--------------------------------------------------
+    // ------------------------------------
     @available(iOS 9.3, *)
     public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         //..
@@ -66,13 +66,22 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     // ------------------------------------
     // MARK: ------ OTHER FUNCTIONS
+    // ***** Fonction: hideKeyboard
+    /*
+     *  Cache le clavier numérique (Reps et Sets)
+     *
+     */
     @IBAction func hideKeyboard(_ sender: UIButton)
     {
         self.view.endEditing(true)
     }
     // ------------------------------------
-    fileprivate func addExercise()
-    {
+    // ***** Fonction: addExercise
+    /*
+     *  Ajoute l’exercice sélectionné à la liste, si tous les champs sont remplis
+     *
+     */
+    fileprivate func addExercise() {
         let theExercise = self.theExercise
         
         if self.exerciseAccountability[theExercise!] == nil
@@ -107,8 +116,13 @@ class ViewController: UIViewController, WCSessionDelegate {
         self.mAlerts(self.displayWorkout(theDate))
     }
     // ------------------------------------
-    func mAlerts(_ theMessage: String)
-    {
+    // ***** Fonction: mAlerts
+    /*
+     *  Montre les alertes (si il y de champs vides ou si l’exercice est ajouté correctement
+     *
+     *  @param theMessage: le message à être montré
+     */
+    func mAlerts(_ theMessage: String) {
         let alertController = UIAlertController(title: "Workout Summary...", message:
             theMessage, preferredStyle: UIAlertControllerStyle.alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
@@ -116,8 +130,13 @@ class ViewController: UIViewController, WCSessionDelegate {
         self.present(alertController, animated: true, completion: nil)
     }
     // ------------------------------------
-    func displayWorkout(_ theDate: String) -> String
-    {
+    // ***** Fonction: displayWorkout
+    /*
+     *  Fait la mise en page des informations des exercices pour les montrer dans l’alerte
+     *
+     *  @param theDate: la date de l'exercice
+     */
+    func displayWorkout(_ theDate: String) -> String {
         var strForDisplay = ""
         
         for (a, b) in self.theDatabase
@@ -137,16 +156,14 @@ class ViewController: UIViewController, WCSessionDelegate {
         return strForDisplay
     }
     // ------------------------------------
-    func datePickerChanged(_ datePicker:UIDatePicker) -> String
-    {
+    func datePickerChanged(_ datePicker:UIDatePicker) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.full
         let strDate = dateFormatter.string(from: datePicker.date)
         return strDate
     }
     // ------------------------------------
-    fileprivate func accountForExercise(_ exerciseName: String)
-    {
+    fileprivate func accountForExercise(_ exerciseName: String) {
         var count = self.exerciseAccountability[exerciseName]!
         count += 1
         self.exerciseAccountability[exerciseName] = count
@@ -154,14 +171,12 @@ class ViewController: UIViewController, WCSessionDelegate {
         self.thePickerView.reloadAllComponents()
     }
     // ------------------------------------
-    func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int
-    {
+    func numberOfComponentsInPickerView(_ pickerView: UIPickerView) -> Int {
         return 1
     }
     // ------------------------------------
     // MARK: ------ UIDatePicker FUNCTIONS
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView
-    {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
         let pickerLabel = UILabel()
         var anArrayOfString = ["- CHOOSE EXERCISE -"]
         
@@ -184,13 +199,11 @@ class ViewController: UIViewController, WCSessionDelegate {
         return pickerLabel
     }
     // ------------------------------------
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
-    {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return self.exerciseAccountability.count;
     }
     // ------------------------------------
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-    {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         var anArrayOfString = ["NO DATA"]
         
         let unSortedEcerciseKeys = Array(self.exerciseAccountability.keys)
@@ -216,8 +229,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         }
     }
     // ------------------------------------
-    fileprivate func saveUserDefaultIfNeeded()
-    {
+    fileprivate func saveUserDefaultIfNeeded() {
         //self.exerciseAccount.removeObjectForKey("exercises")
         
         if !self.checkForUserDefaultByName("exercises", andUserDefaultObject: self.exerciseAccount)
@@ -230,8 +242,7 @@ class ViewController: UIViewController, WCSessionDelegate {
         }
     }
     // ------------------------------------
-    func checkForUserDefaultByName(_ theName: String, andUserDefaultObject: UserDefaults) -> Bool
-    {
+    func checkForUserDefaultByName(_ theName: String, andUserDefaultObject: UserDefaults) -> Bool {
         let userDefaultObject = andUserDefaultObject.object(forKey: theName)
         
         if userDefaultObject == nil
@@ -243,12 +254,20 @@ class ViewController: UIViewController, WCSessionDelegate {
     }
     // ------------------------------------
     // MARK: ------ BUTTONS
-    //ADD SET
+    // ***** Fonction: addSetButton
+    /*
+     *  Appelle la fonction addExercise()
+     *
+     */
     @IBAction func addSetButton(_ sender: UIButton) {
         self.addExercise()
     }
     // ------------------------------------
-    //DONE
+    // ***** Fonction: doneButton
+    /*
+     *  Réinitialise les champs et les « PickerView »
+     *
+     */
     @IBAction func doneButton(_ sender: UIButton) {
         self.thePickerView.selectRow(0, inComponent: 0, animated: true)
         
@@ -263,12 +282,17 @@ class ViewController: UIViewController, WCSessionDelegate {
         self.theSetsField.text = ""
     }
     // ------------------------------------
-    //SYNCH
+    // ***** Fonction: sendToWatch
+    /*
+     *  Fait la synchronisation de la liste entre le téléphone et la montre
+     *
+     */
+
     @IBAction func sendToWatch(_ sender: UIButton) {
         
         Shared.sharedInstance.saveOrLoadUserDefaults("db")
         self.saveUserDefaultIfNeeded()
-       
+        
         var dictToSendWatch: [String : String] = [:]
         
         for aWorkout in Shared.sharedInstance.theDatabase {
@@ -285,7 +309,11 @@ class ViewController: UIViewController, WCSessionDelegate {
         sendMessage(aDict: dictToSendWatch)
     }
     // ------------------------------------
-    // SAVE TO CLIPBOARD
+    // ***** Fonction: saveToClipboard
+    /*
+     *  Si l’utilisateur touche 3 fois sur le logo, les données vont être sauvegardés dans la memoire, pour qu’ils soient disponibles à envoyer par courriel, par exemple
+     *
+     */
     @IBAction func saveToClipboard(_ sender: UIButton) {
         contSaveClipboard+=1
         
@@ -299,7 +327,11 @@ class ViewController: UIViewController, WCSessionDelegate {
         
     }
     // ------------------------------------
-    // RESET
+    // ***** Fonction: resetExercises
+    /*
+     *  Si l’utilisateur touche 5 fois sur le texte “TYPE OF EXERCISE”, il peut faire le reset des “accountabilities” (met à zero tous les valeurs des exercices)
+     *
+     */
     @IBAction func resetExercises(_ sender: UIButton) {
         contReset += 1
         if contReset == 5 {
@@ -308,7 +340,7 @@ class ViewController: UIViewController, WCSessionDelegate {
             
             //YES
             alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
-
+                
                 for (s, _) in self.exerciseAccountability {
                     self.exerciseAccountability[s] = 0
                 }
@@ -329,8 +361,7 @@ class ViewController: UIViewController, WCSessionDelegate {
 }
 // ===================================================
 // MARK: ------ EXTENSIONS
-extension Date
-{
+extension Date {
     init(dateString:String) {
         let dateStringFormatter = DateFormatter()
         dateStringFormatter.dateFormat = "yyyy-MM-dd"
