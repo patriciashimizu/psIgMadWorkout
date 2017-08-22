@@ -265,7 +265,10 @@ class ViewController: UIViewController, WCSessionDelegate {
     // ------------------------------------
     // ***** Fonction: doneButton
     /*
-     *  Réinitialise les champs et les « PickerView »
+     *  Met les objets (champs et PickerView) à l’état initiale : 
+     *      Date for Workout: date actuelle
+     *      « Sets » et « Reps » : vide
+     *      Type of exercice: «  - CHOOSE EXERCICE – »
      *
      */
     @IBAction func doneButton(_ sender: UIButton) {
@@ -329,7 +332,7 @@ class ViewController: UIViewController, WCSessionDelegate {
     // ------------------------------------
     // ***** Fonction: resetExercises
     /*
-     *  Si l’utilisateur touche 5 fois sur le texte “TYPE OF EXERCISE”, il peut faire le reset des “accountabilities” (met à zero tous les valeurs des exercices)
+     *  Si l’utilisateur touche 5 fois sur le texte “TYPE OF EXERCISE”, il peut faire le reset des “accountabilities” (met à zero tous les valeurs des exercices - "Accontabilities")
      *
      */
     @IBAction func resetExercises(_ sender: UIButton) {

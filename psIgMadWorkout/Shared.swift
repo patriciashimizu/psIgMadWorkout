@@ -10,6 +10,14 @@ class Shared: UIViewController {
     var theRow: Int!
     // ============================
     // MARK: ------ OTHER FUNCTIONS
+    // ***** Fonction: checkForUserDefaultByName
+    /*
+     *  Fait la vérification si le nom de l’userDefaults est correct
+     *
+     *  @param theName: le nom de l'userDefaults
+     *  @param andUserDefaultObject: l'userDefaults
+     *  @return true ou false
+     */
     func checkForUserDefaultByName(_ theName: String, andUserDefaultObject: UserDefaults) -> Bool {
         let userDefaultObject = andUserDefaultObject.object(forKey: theName)
         
@@ -21,6 +29,12 @@ class Shared: UIViewController {
         return true
     }
     // ============================
+    // ***** Fonction: saveOrLoadUserDefaults
+    /*
+     *  Fait la vérification si l’userDefaults existe, pour sauvegarder ou télécharger les données
+     *
+     *  @param name: le nom de l'userDefaults
+     */
     func  saveOrLoadUserDefaults(_ name: String) {
         //self.savedUserDefault.removeObjectForKey(name)
         
@@ -45,6 +59,12 @@ class Shared: UIViewController {
         return self.savedUserDefault.value(forKey: name) as! [String : [[String : String]]]
     }
     // ============================
+    // ***** Fonction: saveDatabase
+    /*
+     *  Sauvegarde les données dans l’userDefaults
+     *
+     *  @param valueToSave: les valeurs à être sauvegardés
+     */
     func saveDatabase(_ valueToSave: [String : [[String : String]]]) {
         self.savedUserDefault.setValue(valueToSave, forKey: "db")
     }

@@ -50,7 +50,7 @@ class WorkoutsView: UIViewController {
     }
     // ============================
     // MARK: ------ OTHER FUNCTIONS
-    /// ***** Fonction: getDates
+    // ***** Fonction: getDates
     /*
      *  Efface la ligne sélectionnée par l’utilisateur
      *
